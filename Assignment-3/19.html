@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even and Odd Numbers</title>
+</head>
+<body>
+
+    <h2>Even and Odd Numbers</h2>
+    <p id="output"></p>
+
+    <script>
+        let start = 1;
+        let end = 20;
+        let even = "";
+        let odd = "";
+
+        for (let i = start; i <= end; i++) {
+            if (i % 2 === 0) {
+                even += i + " ";
+            } else {
+                odd += i + " ";
+            }
+        }
+
+        document.getElementById("output").innerHTML =
+            "Even Numbers: " + even + "<br>" +
+            "Odd Numbers: " + odd;
+    </script>
+
+</body>
+</html>

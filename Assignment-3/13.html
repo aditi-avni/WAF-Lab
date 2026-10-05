@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h2>Simple Calculator</h2>
+    <p id="output"></p>
+
+    <script>
+        let a = 20;
+        let b = 5;
+        let operator = "+";
+        let result;
+
+        switch (operator) {
+            case "+":
+                result = a + b;
+                break;
+
+            case "-":
+                result = a - b;
+                break;
+
+            case "*":
+                result = a * b;
+                break;
+
+            case "/":
+                result = a / b;
+                break;
+
+            case "%":
+                result = a % b;
+                break;
+
+            default:
+                result = "Invalid operator";
+        }
+
+        document.getElementById("output").innerHTML =
+            "Result: " + result;
+    </script>
+
+</body>
+</html>

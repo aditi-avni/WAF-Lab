@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Validation</title>
+</head>
+<body>
+
+    <h2>Mobile Number Validation</h2>
+
+    <input type="text" id="mobile" placeholder="Enter mobile number">
+    <button onclick="validateMobile()">Validate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function validateMobile() {
+            let mobile = document.getElementById("mobile").value;
+            let pattern = /^[0-9]{10}$/;
+
+            if (pattern.test(mobile)) {
+                document.getElementById("result").innerHTML =
+                    "Valid Mobile Number";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Invalid Mobile Number";
+            }
+        }
+    </script>
+
+</body>
+</html>

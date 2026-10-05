@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+
+    <h2>Arithmetic Operations</h2>
+    <p id="output"></p>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            return a / b;
+        }
+
+        function modulus(a, b) {
+            return a % b;
+        }
+
+        let a = 20;
+        let b = 5;
+
+        document.getElementById("output").innerHTML =
+            "Addition: " + add(a, b) + "<br>" +
+            "Subtraction: " + subtract(a, b) + "<br>" +
+            "Multiplication: " + multiply(a, b) + "<br>" +
+            "Division: " + divide(a, b) + "<br>" +
+            "Modulus: " + modulus(a, b);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Coordinates</title>
+</head>
+<body>
+
+    <h2>Move the mouse inside the box</h2>
+
+    <div
+        onmousemove="showCoordinates(event)"
+        style="width:400px; height:200px; border:2px solid black;"
+    >
+    </div>
+
+    <p id="coordinates"></p>
+
+    <script>
+        function showCoordinates(event) {
+            document.getElementById("coordinates").innerHTML =
+                "X: " + event.clientX +
+                " , Y: " + event.clientY;
+        }
+    </script>
+
+</body>
+</html>

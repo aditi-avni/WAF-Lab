@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Enter and Leave</title>
+</head>
+<body>
+
+    <h2>Move your mouse over the box</h2>
+
+    <div
+        onmouseenter="changeColor()"
+        onmouseleave="resetColor()"
+        style="width:300px; height:150px; border:2px solid black; padding:20px;"
+    >
+        Move mouse here
+    </div>
+
+    <script>
+        function changeColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        function resetColor() {
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+</body>
+</html>

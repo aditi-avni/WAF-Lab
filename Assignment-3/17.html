@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+</head>
+<body>
+
+    <h2>User Information</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <button onclick="displayInfo()">Display</button>
+
+    <p id="output"></p>
+
+    <script>
+        function displayInfo() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            document.getElementById("output").innerHTML =
+                "Name: " + name + "<br>" +
+                "Email: " + email;
+        }
+    </script>
+
+</body>
+</html>

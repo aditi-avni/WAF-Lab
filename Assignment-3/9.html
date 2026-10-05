@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Natural Numbers</title>
+</head>
+<body>
+
+    <h2>Sum of Natural Numbers</h2>
+    <p id="output"></p>
+
+    <script>
+        let n = 10;
+        let sum = 0;
+
+        for (let i = 1; i <= n; i++) {
+            sum = sum + i;
+        }
+
+        document.getElementById("output").innerHTML =
+            "Sum of first " + n + " natural numbers = " + sum;
+    </script>
+
+</body>
+</html>

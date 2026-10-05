@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keydown Event</title>
+</head>
+<body>
+
+    <h2>Press a key</h2>
+
+    <input type="text" onkeydown="showMessage()">
+
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML =
+                "A key was pressed!";
+        }
+    </script>
+
+</body>
+</html>

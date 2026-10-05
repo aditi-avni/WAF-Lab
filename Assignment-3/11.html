@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number</title>
+</head>
+<body>
+
+    <h2>Prime Number Check</h2>
+    <p id="output"></p>
+
+    <script>
+        let number = 17;
+        let isPrime = true;
+
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            document.getElementById("output").innerHTML =
+                number + " is a Prime Number";
+        } else {
+            document.getElementById("output").innerHTML =
+                number + " is not a Prime Number";
+        }
+    </script>
+
+</body>
+</html>

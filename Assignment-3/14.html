@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+</head>
+<body>
+
+    <h2>Student Result</h2>
+    <p id="output"></p>
+
+    <script>
+        function calculateTotal(marks) {
+            return marks.reduce((sum, mark) => sum + mark, 0);
+        }
+
+        function calculateAverage(total, subjects) {
+            return total / subjects;
+        }
+
+        function calculateGrade(percentage) {
+            if (percentage >= 90) {
+                return "A";
+            } else if (percentage >= 80) {
+                return "B";
+            } else if (percentage >= 70) {
+                return "C";
+            } else if (percentage >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
+        let marks = [85, 90, 78, 88, 92];
+
+        let total = calculateTotal(marks);
+        let average = calculateAverage(total, marks.length);
+        let percentage = total / 5;
+        let grade = calculateGrade(percentage);
+
+        document.getElementById("output").innerHTML =
+            "Total: " + total + "<br>" +
+            "Average: " + average + "<br>" +
+            "Percentage: " + percentage + "%<br>" +
+            "Grade: " + grade;
+    </script>
+
+</body>
+</html>

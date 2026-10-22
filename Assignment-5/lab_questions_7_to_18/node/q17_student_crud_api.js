@@ -34,7 +34,7 @@ app.get("/students/:id", (req, res) => {
 // POST a student
 app.post("/students", (req, res) => {
     students.push(req.body);
-    res.status(201).json({ message: "Student added", student: req.body });
+    res.status(201).json({ message : "student added"});
 });
 
 // PUT - update a student

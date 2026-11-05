@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <h1>Hospital Appointment System</h1>
+    <form method="POST">
+        <label for="patient">Patient Name</label>
+        <input id="patient" name="patient" maxlength="60" required value="{{ request.form.get('patient', '') }}">
+
+        <label for="doctor">Doctor</label>
+        <input id="doctor" name="doctor" required value="{{ request.form.get('doctor', '') }}">
+
+        <label for="appointment_date">Appointment Date</label>
+        <input id="appointment_date" type="date" name="appointment_date" required value="{{ request.form.get('appointment_date', '') }}">
+
+        <label for="contact">Contact Number</label>
+        <input id="contact" name="contact" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required value="{{ request.form.get('contact', '') }}">
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    {% if errors %}
+    <section class="error">
+        <h2>Please correct these errors</h2>
+        <ul>{% for error in errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+
+    {% if confirmation %}
+    <section class="result">
+        <h2>Appointment Confirmed</h2>
+        <p><strong>Patient:</strong> {{ confirmation.patient }}</p>
+        <p><strong>Doctor:</strong> {{ confirmation.doctor }}</p>
+        <p><strong>Date:</strong> {{ confirmation.appointment_date }}</p>
+        <p><strong>Contact:</strong> {{ confirmation.contact }}</p>
+    </section>
+    {% endif %}
+</main>
+</body>
+</html>

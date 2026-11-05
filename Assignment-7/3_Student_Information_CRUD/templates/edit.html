@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <h1>Edit Student</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}<ul class="messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label>Roll Number</label><input name="roll_no" value="{{ request.form.get('roll_no', student.roll_no) }}" required>
+        <label>Student Name</label><input name="name" value="{{ request.form.get('name', student.name) }}" required>
+        <label>Department</label><input name="department" value="{{ request.form.get('department', student.department) }}" required>
+        <label>Email</label><input type="email" name="email" value="{{ request.form.get('email', student.email) }}" required>
+        <button type="submit">Save Changes</button>
+        <a class="back" href="{{ url_for('index') }}">Cancel</a>
+    </form>
+</main>
+</body>
+</html>

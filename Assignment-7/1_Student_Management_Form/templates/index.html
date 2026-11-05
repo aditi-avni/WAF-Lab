@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <h1>Student Management System</h1>
+    <form method="POST">
+        <label for="name">Student Name</label>
+        <input id="name" name="name" maxlength="60" required value="{{ request.form.get('name', '') }}">
+
+        <label for="department">Department</label>
+        <input id="department" name="department" maxlength="60" required value="{{ request.form.get('department', '') }}">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if errors %}
+    <section class="error">
+        <h2>Please correct these errors</h2>
+        <ul>{% for error in errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+
+    {% if student %}
+    <section class="result">
+        <h2>Student Details</h2>
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Department:</strong> {{ student.department }}</p>
+    </section>
+    {% endif %}
+</main>
+</body>
+</html>
